@@ -1,0 +1,95 @@
+body
+{
+   /* background-color:aqua; */
+   background-color: blanchedalmond;
+   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+#homeHead
+{
+    color:black;
+}
+h1
+{
+  /*  text-align: center; */
+}
+#homePara
+{
+    color:rebeccapurple;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+#mainContainer
+{
+    margin-top: 70px;
+}
+#result
+{
+    cursor: pointer;
+}
+/* For description pop up */
+.popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* The actual popup */
+  .popup .popuptext {
+    visibility: hidden;
+    width: 70vw !important;
+    
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    opacity: 0.8;
+    /*
+    bottom: 125%;
+    left: 100%;
+   margin-left: 80px;
+    margin-top: 300px !important;
+    */
+    margin-left: -200px;
+    margin-top:15px;
+  }
+  
+  /* Popup arrow */
+  .popup .popuptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+  }
+  
+  /* Toggle this class - hide and show the popup */
+  .popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+  }
+  
+  /* Add animation (fade in the popup) */
+  @-webkit-keyframes fadeIn {
+    from {opacity: 0;} 
+    to {opacity: 1;}
+  }
+  
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+  }
+
+  /*remove button underline*/
+  .nounderline {
+    text-decoration: none !important
+  }

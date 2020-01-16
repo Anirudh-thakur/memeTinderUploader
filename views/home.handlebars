@@ -1,0 +1,73 @@
+<div class="container" id="mainContainer">
+        <h1 id="homeHead">Meme Uploader</h1>
+        <p></p> 
+        <form class="form-inline my-2 my-lg-0" onsubmit = " return memeTinder()" action="/upload" method="post" enctype="multipart/form-data">
+            <div>
+                    <h4>Categories</h4>
+                                  <div class="form-group">
+                                    <input type="radio" id="category1" name="category">
+                                    <label>Hindi Memes</label>
+                                  </div> 
+                                  <div class="form-group">
+                                    <input type="radio" id="category2" name="category">
+                                    <label>Wholesome</label>
+                                  </div>
+                                   <div class="form-group">
+                                    <input type="radio" id="category3" name="category">
+                                    <label>self Deprecating meme</label>
+                                   </div>
+                                   <div class="form-group">
+                                    <input type="radio" id="category4" name="category">
+                                    <label>Dark meme</label>
+                                   </div>
+                                    <div class="form-group">
+                                    <input type="radio" id="category5" name="category">
+                                    <label>Sports meme</label>
+                                    </div>
+                                     <div class="form-group">
+                                    <input type="radio" id="category6" name="category">
+                                    <label>Youtube meme</label>
+                                     </div>
+                                      <div class="form-group">
+                                    <input type="radio" id="category7" name="category">
+                                    <label>Celebrity meme</label>
+                                      </div>
+                                       <div class="form-group">
+                                    <input type="radio" id="category8" name="category">
+                                    <label>Animal meme</label>
+                                       </div>
+                                        <div class="form-group">
+                                    <input type="radio" id="category9" name="category">
+                                    <label>TV meme</label>
+                                        </div>
+                                         <div class="form-group">
+                                    <input type="radio" id="category10" name="category">
+                                    <label>Animated meme</label>
+                                         </div>
+                                          <div class="form-group">
+                                    <input type="radio" id="category11" name="category">
+                                    <label>Political meme</label>
+                                          </div>
+                                           <div class="form-group">
+                                    <input type="radio" id="category12" name="category">
+                                    <label>Fitness meme </label>
+                                           </div>
+                                           <div class="form-group">
+                                    <input type="radio" id="category13" name="category">
+                                    <label>Nerd meme</label>
+                                           </div>
+                                             <div class="form-group">
+                                                     <label>Tags:</label>
+                                   <input class="form-control mr-sm-2" type="search" placeholder="Tags" aria-label="Search" id="tags" style="margin-right: 0%;">
+                                           </div>
+                                           <div class="form-group">
+                                                     <label>Upload Meme:</label>
+                                                     <input type="file" name="photo">
+                                           </div>
+
+                    <button class="btn btn-success my-2 my-sm-0" type="submit" value="upload">Upload</button>
+            </div>
+        </form>
+        <div id="result">
+        </div>
+</div>
