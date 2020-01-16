@@ -1,3 +1,8 @@
-module.exports = {
-    MongoURI : 'mongodb+srv://MemeTinder:memetinder69@cluster0-unlyn.mongodb.net/test?retryWrites=true&w=majority'
-  }
+if(process.env.NODE_ENV === 'production')
+{
+    module.exports = require('./keys_prod');
+}
+else
+{
+    module.exports = require('./keys_dev');
+}

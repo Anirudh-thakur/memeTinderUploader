@@ -1,7 +1,7 @@
 const express = require("express");
 const exphbr = require('express-handlebars');
 const multer = require('multer');
-const upload = multer({dest: __dirname + 'public/images'});
+//const upload = multer({dest: __dirname + 'public/images'});
 
 // initialise
 const app = express();
@@ -47,12 +47,12 @@ app.get('/contact',(req,res) =>
 }
 );
 
-app.post('/upload', upload.single('photo'), (req, res) => {
-    if(req.file) {
-        res.json(req.file);
-    }
-    else throw 'error';
-});
+// app.post('/upload', upload.single('photo'), (req, res) => {
+//     if(req.file) {
+//         res.json(req.file);
+//     }
+//     else throw 'error';
+// });
 
 //listen to port
 app.listen(port, () =>
@@ -60,4 +60,4 @@ app.listen(port, () =>
  // console.log('Server is running on port ${port}');
   
   console.log(`Server is running on port ${port}`);
-});
+}); 
