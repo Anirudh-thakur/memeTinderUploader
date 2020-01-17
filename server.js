@@ -156,7 +156,7 @@ app.post('/upload', upload.single('photo'), (req, res) => {
           }
         });
       //res.json(req.file);
-      res.render('home.handlebars'); 
+      res.render('contact.handlebars'); 
     }
     else throw 'error';
 });
