@@ -150,11 +150,13 @@ app.post('/upload', upload.single('photo'), (req, res) => {
       });
       newMeme.save(function(error) {
             console.log("Your meme has been saved!");
+             alert("Your meme has been saved!");
               if (error) {
              console.error(error);
           }
         });
-      res.json(req.file);
+      //res.json(req.file);
+      res.render('home.handlebars'); 
     }
     else throw 'error';
 });
