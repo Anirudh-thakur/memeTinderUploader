@@ -1,7 +1,7 @@
 const express = require("express");
 const exphbr = require('express-handlebars');
 const multer = require('multer');
-const bodyParser = require('body-parser')
+const bodyParser = require('body-parser');
 const storage = multer.diskStorage({
     destination: function(req, file, cb) {
         cb(null, './uploads/');
@@ -12,7 +12,9 @@ const storage = multer.diskStorage({
 });
 const upload = multer({storage: storage}); // you can set limits by setting fileSize
 // can also set up a fileFilter and che
-const meme = require("./models/meme");
+
+//importing schema 
+//const meme = require("./models/meme");
 
 
 // initialise
@@ -65,69 +67,93 @@ app.get('/contact',(req,res) =>
   res.render('contact');
 }
 );
-
+const schema = mongoose.Schema;
+const memeSchema = new schema(
+  {
+    category: {
+      type: String,
+      default: ''
+    },
+    tags: {
+      type: String,
+      default: ''
+    },
+    img: {
+      type: String,
+      default: ''
+    }
+  }
+);
 app.post('/upload', upload.single('photo'), (req, res) => {
     if(req.file) {
        // res.json(req.file);
         console.log(req.body);
-        var category = "";
-        var tags = req.body.tags;
-        var MemeImage = req.file.path;
+        var Category = "";
         if(req.body.Hindi === 'on')
         {
-            category = category + "Hindi Memes,"
+            Category = Category + "Hindi Memes,"
         }
         if(req.body.Wholesome === 'on')
         {
-            category = category + "Wholesome Memes,"
+            Category = Category + "Wholesome Memes,"
         }
         if(req.body.Deprecating === 'on')
         {
-            category = category + "Self Deprecating Memes,"
+            Category = Category + "Self Deprecating Memes,"
         }
         if(req.body.Dark === 'on')
         {
-            category = category + "Dark Memes,"
+            Category = Category + "Dark Memes,"
         }
         if(req.body.Sports === 'on')
         {
-            category = category + "Sports Memes,"
+            Category = Category + "Sports Memes,"
         }
         if(req.body.Youtube === 'on')
         {
-            category = category + "Youtube Memes,"
+            Category = Category + "Youtube Memes,"
         }
         if(req.body.Celebrity === 'on')
         {
-            category = category + "Celebrity Memes,"
+            Category = Category + "Celebrity Memes,"
         }
         if(req.body.Animal  === 'on')
         {
-            category = category + "Animal Memes,"
+            Category = Category + "Animal Memes,"
         }
         if(req.body.TV  === 'on')
         {
-            category = category + "TV Memes,"
+            Category = Category + "TV Memes,"
         }
         if(req.body.Animated === 'on')
         {
-            category = category + "Animated Memes,"
+            Category = Category + "Animated Memes,"
         }
         if(req.body.Political === 'on')
         {
-            category = category + "Political Memes,"
+            Category = Category + "Political Memes,"
         }
         if(req.body.Fitness === 'on')
         {
-            category = category + "Fitness Memes,"
+            Category = Category + "Fitness Memes,"
         }
         if(req.body.Nerd === 'on')
         {
-            category = category + "Nerd Memes,"
+            Category = Category + "Nerd Memes,"
         }
-      console.log(category);
-      console.log(tags);
-      console.log(MemeImage);
+      console.log(Category);
+      var Meme = mongoose.model("Meme",memeSchema);
+      var newMeme = new Meme({
+        category: Category,
+        tags:req.body.tags,
+        img:req.file.path
+      });
+      newMeme.save(function(error) {
+            console.log("Your meme has been saved!");
+              if (error) {
+             console.error(error);
+          }
+        });
       res.json(req.file);
     }
     else throw 'error';
